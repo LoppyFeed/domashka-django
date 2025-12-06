@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.title }} | Учебный блог{% endblock %}
+
+{% block content %}
+<article class="post-detail">
+    <p class="eyebrow">Пост</p>
+    <h1>{{ post.title }}</h1>
+    <p class="post-author">Автор: {{ post.author }}</p>
+    <div class="post-body">
+        {{ post.content|linebreaks }}
+    </div>
+    <a class="btn ghost" href="{% url 'blog:home' %}">Вернуться на главную</a>
+</article>
+{% endblock %}

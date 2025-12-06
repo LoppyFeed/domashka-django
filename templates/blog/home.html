@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная | Учебный блог{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-text">
+        <p class="eyebrow">Практика 2: шаблоны</p>
+        <h1>Учебный блог на Django</h1>
+        <p>Демонстрация базовой структуры проекта: маршруты, шаблоны, статика и гостевая книга.</p>
+        <div class="hero-actions">
+            <a class="btn primary" href="{% url 'blog:about' %}">О блоге</a>
+            <a class="btn ghost" href="{% url 'blog:reviews' %}">Отзывы</a>
+        </div>
+    </div>
+    <div class="hero-visual">
+        <img src="{% static 'img/hero.svg' %}" alt="Иллюстрация блога">
+    </div>
+</section>
+
+<section class="posts">
+    <div class="section-head">
+        <h2>Свежие записи</h2>
+        <p>Страницы демонстрируют работу маршрутов и наследование шаблонов.</p>
+    </div>
+    <div class="post-grid">
+        {% for post in posts %}
+            <article class="post-card">
+                <p class="post-author">{{ post.author }}</p>
+                <h3>{{ post.title }}</h3>
+                <p class="post-summary">{{ post.summary }}</p>
+                <a class="post-link" href="{% url 'blog:post_detail' slug=post.slug %}">Читать полностью →</a>
+            </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

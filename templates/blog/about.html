@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}О блоге | Учебный блог{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <p class="eyebrow">О проекте</p>
+    <h1>Почему именно блог</h1>
+    <p>Блог — хороший тренажёр для практики: маршруты, шаблоны, работа со статикой и формами.</p>
+</section>
+
+<section class="feature-grid">
+    <div class="feature">
+        <h3>Маршруты</h3>
+        <p>В файле <code>blog/urls.py</code> объявлены страницы: главная, о блоге, пост и отзывы.</p>
+    </div>
+    <div class="feature">
+        <h3>Шаблоны</h3>
+        <p>Все страницы наследуют базовый файл <code>templates/base.html</code> и подключают стили.</p>
+    </div>
+    <div class="feature">
+        <h3>Статика</h3>
+        <p>Стили и изображения лежат в папке <code>static/</code> и подключены через тег <code>{% raw %}{% load static %}{% endraw %}</code>.</p>
+    </div>
+    <div class="feature">
+        <h3>Отзывы</h3>
+        <p>Форма и модель отзывов показывают работу с базой данных и модерацией контента.</p>
+    </div>
+</section>
+{% endblock %}
