@@ -69,7 +69,7 @@ def reviews(request):
     if request.method == 'POST' and form.is_valid():
         form.save()
         messages.success(request, 'Отзыв отправлен. После проверки он появится на странице.')
-        return redirect('reviews')
+        return redirect('blog:reviews')
 
     return render(
         request,
