@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load static %}
 
 {% block title %}Главная | Учебный блог{% endblock %}
 
@@ -13,9 +12,6 @@
             <a class="btn primary" href="{% url 'blog:about' %}">О блоге</a>
             <a class="btn ghost" href="{% url 'blog:reviews' %}">Отзывы</a>
         </div>
-    </div>
-    <div class="hero-visual">
-        <img src="{% static 'img/hero.svg' %}" alt="Иллюстрация блога">
     </div>
 </section>
 
